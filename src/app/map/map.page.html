@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Map</ion-title>
+    <ion-searchbar (ionInput)="doSearch($event)" debounce="1000" placeholder="ค้นหา"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-list>
+  <button ion-item *ngFor="let u of users">
+    <h3>{{u.username}}</h3>
+  </button>
+</ion-list>
+<ion-content>
+  <ion-fab vertical="top" horizontal="end">
+    <ion-fab-button color="danger" (click)="addParking()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

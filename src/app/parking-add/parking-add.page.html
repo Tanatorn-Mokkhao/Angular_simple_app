@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>เพิ่มที่จอดรถ</ion-title>
+    <ion-buttons slot="end">
+      <button ion-button color="primary" icon-left (click)="save()">
+        <ion-icon name="create"></ion-icon>SAVE
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="save()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg size-xs="12">
+          <div text-center>
+            <h3>รายละเอียดที่จอดรถ</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input type="text" name="name" placeholder="ชื่อสถานที่จอดรถ" [(ngModel)]="parking[0].name">
+              </ion-input>
+            </ion-item>
+            <ion-textarea name="description" placeholder="เพิ่มรายละเอียดสถานที่ อัตราค่าบริการ"
+              [(ngModel)]="parking[0].description">
+            </ion-textarea>
+            <ion-text>
+              <ion-input type="number" name="available" placeholder="จำนวนที่รองรับ" [(ngModel)]="parking[0].available">
+              </ion-input>
+            </ion-text>
+          </div>
+          <ion-button size="large" type="submit" expand="block">บันทึก</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
